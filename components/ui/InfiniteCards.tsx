@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -26,6 +27,7 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [start, setStart] = useState(false);
   function addAnimation() {
@@ -104,10 +106,10 @@ export const InfiniteMovingCards = ({
 
               <div className="relative z-20  flex flex-row items-center">
                 <div className="me-3">
-                  <img src={item.img} alt="profile" />
+                  <Image height={36} width={45} src={item.img} alt="profile" />
                 </div>
               </div>
-              <div className=" relative z-20 text-sm md:text-2xl leading-[1.6] text-white font-normal">
+              <div className=" relative z-20 text-sm md:text-2xl leading-[1.6] text-white font-normal flex justify-center items-center">
                 {item.name}
               </div>
             </blockquote>
